@@ -85,6 +85,7 @@ export const Login: React.FC = () => {
               className={classes.Login__input}
             />
             <button
+              name="showPassword"
               type="button"
               onClick={togglePasswordVisibility}
               className={classes.Login__togglePassword}
