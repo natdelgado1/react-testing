@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { getOrders } from "../services/getOrders";
 import { Order } from "../types/Orders";
 
-export const useUserOrders = () => {
+export const useOrders = () => {
     const [orders, setOrders] = useState<Order[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
