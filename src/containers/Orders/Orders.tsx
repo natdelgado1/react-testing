@@ -2,10 +2,10 @@ import { OrderSummary } from "../../components/OrderSummary";
 import { handleValidateSuperAdmin } from "../../utils/validateRole";
 import { OrderItem } from "../../components/OrderItem";
 import classes from "./Orders.module.scss";
-import { useUserOrders } from '../../hooks/userOrders'
+import { useOrders } from '../../hooks/userOrders'
 
 export const Orders: React.FC = () => {
-  const { orders, loading, error , user} = useUserOrders();
+  const { orders, loading, error , user} = useOrders();
 
  
 
