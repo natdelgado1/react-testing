@@ -2,7 +2,7 @@ import { describe, it, expect, vi, Mock } from "vitest";
 import { getOrders } from '../services/getOrders'
 import { useSession } from '../context/AuthContext'
 import { renderHook } from '@testing-library/react'
-import { useUserOrders } from "./userOrders";
+import { useOrders } from "./userOrders";
 import { act } from "react";
 
 vi.mock('../services/getOrders', () => ({
@@ -17,7 +17,7 @@ vi.mock('react-router-dom', () => ({
     useNavigate: vi.fn()
 }))
 
-describe('useUserOrders', () => {
+describe('useOrders', () => {
     const mockgetOrders = getOrders as Mock
     const mockUserSession = useSession as Mock;
 
@@ -59,7 +59,7 @@ describe('useUserOrders', () => {
         mockUserSession.mockReturnValue({
             user: { id: 1 }
         })
-        const { result } = renderHook(() => useUserOrders())
+        const { result } = renderHook(() => useOrders())
         expect(result.current.loading).toBe(true);
 
         await act(async () => {
